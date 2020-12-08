@@ -1,4 +1,4 @@
-package eni.tpModule;
+package tp1;
 
 import java.io.File;
 import java.util.*;
@@ -7,7 +7,7 @@ public class Programme {
 
 
     public static ArrayList<Character> tirerMotAleatoirement() {
-        File dico = new File("./dictionnaire.txt");
+        File dico = new File("./dictionnaire");
         try {
             Scanner s = new Scanner(dico);
             int nbLignes = 22506;
@@ -79,7 +79,7 @@ public class Programme {
     }
 
     public static boolean dansLeDico(String proposition) {
-        File dico = new File("./dictionnaire.txt");
+        File dico = new File("./dictionnaire");
         try {
             Scanner s = new Scanner(dico);
             int nbLignes = 22506;
