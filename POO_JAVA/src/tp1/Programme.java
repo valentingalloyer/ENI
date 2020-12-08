@@ -117,6 +117,7 @@ public class Programme {
         for (int i=0 ; i<motAleatoire.size() ; i++) {
             motATrouver += motAleatoire.get(i);
         }
+        // Petit indice pour le test
         System.out.println("Petit indice : " + motATrouver);
         List<Character> bonMot = afficher(melanger(motAleatoire));
 
