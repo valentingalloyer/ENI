@@ -7,7 +7,7 @@ public class Programme {
 
 
     public static ArrayList<Character> tirerMotAleatoirement() {
-        File dico = new File("./dictionnaire");
+        File dico = new File("./dictionnaire.txt");
         try {
             Scanner s = new Scanner(dico);
             int nbLignes = 22506;
@@ -79,7 +79,7 @@ public class Programme {
     }
 
     public static boolean dansLeDico(String proposition) {
-        File dico = new File("./dictionnaire");
+        File dico = new File("./dictionnaire.txt");
         try {
             Scanner s = new Scanner(dico);
             int nbLignes = 22506;

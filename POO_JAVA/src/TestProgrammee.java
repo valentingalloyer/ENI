@@ -16,7 +16,6 @@ public class TestProgrammee {
 	}
 	
 	private static void afficherSalutation(String prenom) {
-		// TODO Auto-generated method stub
 		System.out.println("Bonjour " + prenom + " !");
 	}
 

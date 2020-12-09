@@ -10,6 +10,7 @@ public class Patient {
     private long numeroSecuriteSociale;
     private LocalDate dateDeNaissance;
     private String commentaire;
+    private Adresse adresse;
 
     public Patient(String nom, String prenom, String numeroDeTelephone, char sexe, long numeroSecuriteSociale, LocalDate dateDeNaissance, String commentaire) {
         this.nom = nom;
@@ -24,6 +25,20 @@ public class Patient {
             this.commentaire = "[Pas de commentaires]";
     }
 
+    public Patient(String nom, String prenom, String numeroDeTelephone, char sexe, long numeroSecuriteSociale, LocalDate dateDeNaissance, String commentaire, Adresse adresse) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.numeroDeTelephone = numeroDeTelephone;
+        this.sexe = sexe;
+        this.numeroSecuriteSociale = numeroSecuriteSociale;
+        this.dateDeNaissance = dateDeNaissance;
+        if (commentaire != null)
+            this.commentaire = commentaire;
+        else
+            this.commentaire = "[Pas de commentaires]";
+        this.adresse = adresse;
+    }
+
     public void afficher() {
         System.out.println(nom + " " + prenom);
         System.out.println("Numéro de téléphone : " + numeroDeTelephone);
@@ -31,6 +46,7 @@ public class Patient {
         System.out.println("Numéro de sécurité sociale : " + numeroSecuriteSociale);
         System.out.println("Date de naissance : " + dateDeNaissance.format(DateTimeFormatter.ofPattern("dd MMMM yyyy",Locale.FRENCH)));
         System.out.println("Commentaires : " + commentaire);
+        if (this.adresse != null) this.adresse.afficher();
     }
 
     public String getNom() {

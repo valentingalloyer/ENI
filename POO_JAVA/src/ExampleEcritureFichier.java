@@ -66,7 +66,6 @@ public class ExampleEcritureFichier {
 		}
 	}
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		// Example 1
 		ecrireExample1();
 		// Example 2 
