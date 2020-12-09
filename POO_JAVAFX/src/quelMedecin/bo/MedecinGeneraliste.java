@@ -1,58 +1,44 @@
 package quelMedecin.bo;
 
-public class MedecinGeneraliste {
+import java.util.Scanner;
 
-    private String numeroDeTelephone, nom, prenom;
+public class MedecinGeneraliste extends Personne {
+
     private static float tarif = 25;
-    Adresse adresse;
-    Creneau creneaux[] = new Creneau[15];
+    private Creneau creneaux[] = new Creneau[15];
 
     public MedecinGeneraliste(String nom, String prenom, String numeroDeTelephone) {
-        this.nom = nom;
-        this.prenom = prenom;
-        this.numeroDeTelephone = numeroDeTelephone;
+        super(nom, prenom, numeroDeTelephone);
     }
 
     public MedecinGeneraliste(String nom, String prenom, String numeroDeTelephone, Adresse adresse) {
-        this.nom = nom;
-        this.prenom = prenom;
-        this.numeroDeTelephone = numeroDeTelephone;
-        this.adresse = adresse;
+        super(nom, prenom, numeroDeTelephone, adresse);
     }
 
     public MedecinGeneraliste(String nom, String prenom, String numeroDeTelephone, Adresse adresse, Creneau[] creneaux) {
-        this.nom = nom;
-        this.prenom = prenom;
-        this.numeroDeTelephone = numeroDeTelephone;
-        this.adresse = adresse;
+        super(nom, prenom, numeroDeTelephone, adresse);
         this.creneaux = creneaux;
     }
 
     public void afficher() {
-        System.out.println(nom + " " + prenom);
-        System.out.println("Téléphone : " + numeroDeTelephone);
+        super.afficher();
         System.out.println("Tarif : " + tarif + "€");
-        if (this.adresse != null) this.adresse.afficher();
-    }
-
-    public void ajouterCreneau(Creneau creneau) {
+        if (super.getAdresse() != null) super.getAdresse().afficher();
         int i=0;
-        while (this.creneaux[i] != null) i++;
-        if (i == 15) {
-
+        while (i < this.creneaux.length && this.creneaux[i] != null) {
+            creneaux[i].afficher();
+            i++;
         }
+        super.afficherAdresse();
     }
 
-    public String getNom() {
-        return nom;
-    }
-
-    public String getNumeroDeTelephone() {
-        return numeroDeTelephone;
-    }
-
-    public void setNumeroDeTelephone(String numeroDeTelephone) {
-        this.numeroDeTelephone = numeroDeTelephone;
+    public Object ajouterCreneau(Creneau creneau) {
+        int i=0;
+        while (this.creneaux[i] != null && i<this.creneaux.length) {
+            i++;
+        }
+        this.creneaux[i] = creneau;
+        return null;
     }
 
     public static float getTarif() {

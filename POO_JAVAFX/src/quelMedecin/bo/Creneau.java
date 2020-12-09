@@ -12,10 +12,22 @@ public class Creneau {
         this.heureDebut = heureDebut;
         this.duree = duree;
         this.medecin = medecin;
+        this.medecin.ajouterCreneau(this);
     }
 
     public void afficher() {
         System.out.println(heureDebut + " - " + heureDebut.plusMinutes(duree) + " (" + duree + " minutes)");
-        System.out.println("Médecin associé à ce créneau : Dr " + medecin.getNom());
+    }
+
+    public MedecinGeneraliste getMedecin() {
+        return medecin;
+    }
+
+    public LocalTime getHeureDebut() {
+        return heureDebut;
+    }
+
+    public int getDuree() {
+        return duree;
     }
 }
