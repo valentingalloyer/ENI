@@ -37,40 +37,8 @@ public class Patient extends Personne {
                 "Numéro de téléphone : " + super.getNumeroDeTelephone());
         System.out.println("Sexe : " + sexe + "\n" +
                 "Numéro de sécurité sociale : " + numeroSecuriteSociale + "\n" +
-                "Date de naissance : " + dateDeNaissance.format(DateTimeFormatter.ofPattern("dd MMMM yyyy",Locale.FRENCH)) + "\n" +
+                "Date de naissance : " + dateDeNaissance.format(DateTimeFormatter.ofPattern("dd MMMM yyyy", Locale.FRENCH)) + "\n" +
                 "Commentaires : " + commentaire);
         super.afficherAdresse();
-    }
-
-    public char getSexe() {
-        return sexe;
-    }
-
-    public void setSexe(char sexe) {
-        this.sexe = sexe;
-    }
-
-    public long getNumeroSecuriteSociale() {
-        return numeroSecuriteSociale;
-    }
-
-    public void setNumeroSecuriteSociale(long numeroSecuriteSociale) {
-        this.numeroSecuriteSociale = numeroSecuriteSociale;
-    }
-
-    public LocalDate getDateDeNaissance() {
-        return dateDeNaissance;
-    }
-
-    public void setDateDeNaissance(LocalDate dateDeNaissance) {
-        this.dateDeNaissance = dateDeNaissance;
-    }
-
-    public String getCommentaire() {
-        return commentaire;
-    }
-
-    public void setCommentaire(String commentaire) {
-        this.commentaire = commentaire;
     }
 }

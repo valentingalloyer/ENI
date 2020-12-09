@@ -25,7 +25,7 @@ public class Adresse {
 
     public void afficher() {
         if (mentionsComplementaires != null) System.out.println(mentionsComplementaires);
-        System.out.println(numero + " " + typeEtNomDeVoie);
+        System.out.println(numero + (ajout != null ? ajout : "") + " " + typeEtNomDeVoie);
         System.out.println(codePostal + " " + ville);
     }
 }

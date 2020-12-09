@@ -28,6 +28,4 @@ public class RendezVous {
                 "pour ");
         this.patient.afficher();
     }
-
-
 }

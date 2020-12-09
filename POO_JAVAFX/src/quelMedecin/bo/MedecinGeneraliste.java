@@ -1,7 +1,5 @@
 package quelMedecin.bo;
 
-import java.util.Scanner;
-
 public class MedecinGeneraliste extends Personne {
 
     private static float tarif = 25;
@@ -24,12 +22,16 @@ public class MedecinGeneraliste extends Personne {
         super.afficher();
         System.out.println("Tarif : " + tarif + "€");
         if (super.getAdresse() != null) super.getAdresse().afficher();
+        this.afficherCreneaux();
+        super.afficherAdresse();
+    }
+
+    public void afficherCreneaux() {
         int i=0;
         while (i < this.creneaux.length && this.creneaux[i] != null) {
             creneaux[i].afficher();
             i++;
         }
-        super.afficherAdresse();
     }
 
     public Object ajouterCreneau(Creneau creneau) {
@@ -39,10 +41,6 @@ public class MedecinGeneraliste extends Personne {
         }
         this.creneaux[i] = creneau;
         return null;
-    }
-
-    public static float getTarif() {
-        return tarif;
     }
 
     public static void setTarif(float tarif) {
