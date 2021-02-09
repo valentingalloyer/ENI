@@ -1,4 +1,4 @@
-package gestionnaireDeNotes.bo;
+package gestionnaireDeNotes.perso.bo;
 
 public class Eleve {
 

@@ -1,4 +1,4 @@
-package gestionnaireDeNotes.bll;
+package gestionnaireDeNotes.perso.bll;
 
 public class GestionnaireDeNotesManagerFact {
     public static GestionnaireDeNotesManager getInstance(boolean b) {

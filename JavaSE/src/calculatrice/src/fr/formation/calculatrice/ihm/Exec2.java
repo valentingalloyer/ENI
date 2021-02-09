@@ -12,6 +12,8 @@ public class Exec2 {
 		} catch (Exception e) {
 			System.out.println("ERREUR : " + e.getMessage());
 		}
+		Integer test = 3;
+		new Integer(2).equals(test);
 
 	}
 

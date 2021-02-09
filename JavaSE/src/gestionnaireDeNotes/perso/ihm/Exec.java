@@ -1,13 +1,11 @@
-package gestionnaireDeNotes.ihm;
+package gestionnaireDeNotes.perso.ihm;
 
 
 
-import gestionnaireDeNotes.bll.GestionnaireDeNotesManager;
-import gestionnaireDeNotes.bll.GestionnaireDeNotesManagerFact;
-import gestionnaireDeNotes.bo.Eleve;
+import gestionnaireDeNotes.perso.bll.GestionnaireDeNotesManager;
+import gestionnaireDeNotes.perso.bll.GestionnaireDeNotesManagerFact;
+import gestionnaireDeNotes.perso.bo.Eleve;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Exec {

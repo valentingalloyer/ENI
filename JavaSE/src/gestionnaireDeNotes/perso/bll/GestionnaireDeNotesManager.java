@@ -1,8 +1,8 @@
-package gestionnaireDeNotes.bll;
+package gestionnaireDeNotes.perso.bll;
 
 
 
-import gestionnaireDeNotes.bo.Eleve;
+import gestionnaireDeNotes.perso.bo.Eleve;
 
 import java.util.List;
 
