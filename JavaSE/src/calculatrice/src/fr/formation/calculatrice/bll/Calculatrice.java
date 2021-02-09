@@ -12,7 +12,7 @@ public class Calculatrice {
 		return a*b;
 	}
 	public static Integer div(Integer a, Integer b) throws Exception {
-		if (b==0) {
+		if (new Integer(0).equals(b)) {
 			throw new Exception("b doit être différent de 0");
 		}
 		return a/b;
