@@ -10,7 +10,7 @@ public interface PapeterieManager {
     // PANIER
     Ligne getLigne(int index);
     List<Ligne> getLignesPanier();
-    void addLigne(Article aricle, int qte);
+    void addLigne(Article article, int qte);
     void updateLigne(int index, int newQte);
     void removeLigne(int index);
 
