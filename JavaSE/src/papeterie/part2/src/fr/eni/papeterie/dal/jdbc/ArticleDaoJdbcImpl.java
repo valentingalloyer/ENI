@@ -11,7 +11,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArticleDaoJdbcImpl {
+public class ArticleDaoJdbcImpl implements ArticleDaoJdbc {
 
     private String INSERT = "INSERT INTO articles (reference,marque,designation,prixUnitaire,qteStock,grammage,couleur,type) VALUES (?,?,?,?,?,?,?,?)";
     private String SELECT = "SELECT * FROM articles";
@@ -22,7 +22,7 @@ public class ArticleDaoJdbcImpl {
     private String DELETE = "DELETE FROM articles WHERE idArticle=?";
 
 
-    public void insert(Article article) throws Exception {
+    public void insert(Article article) throws ArticleDalException {
         try (Connection cnx = JdbcTools.getConnection()) {
             PreparedStatement stmt = cnx.prepareStatement(INSERT, Statement.RETURN_GENERATED_KEYS);
             stmt.setString(1, article.getReference());
@@ -53,11 +53,11 @@ public class ArticleDaoJdbcImpl {
 
         } catch (Exception e) {
             e.printStackTrace();
-            throw new Exception("problème dans l'insertion d'un article");
+            throw new ArticleDalException("problème dans l'insertion d'un article");
         }
     }
 
-    public List<Article> selectAll() throws Exception {
+    public List<Article> selectAll() throws ArticleDalException {
         List<Article> result = new ArrayList<Article>();
         try (Connection cnx = JdbcTools.getConnection()) {
             PreparedStatement stmt = cnx.prepareStatement(SELECT);
@@ -83,12 +83,12 @@ public class ArticleDaoJdbcImpl {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            throw new Exception("problème dans la selection des Articles");
+            throw new ArticleDalException("problème dans la selection des Articles");
         }
         return result;
     }
 
-    public Article selectById(int id) throws Exception {
+    public Article selectById(int id) throws ArticleDalException {
         // TODO Auto-generated method stub
         Article art = new Ramette();
         try (Connection cnx = JdbcTools.getConnection()) {
@@ -129,12 +129,12 @@ public class ArticleDaoJdbcImpl {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            throw new Exception("Problème dans la sélection d'article");
+            throw new ArticleDalException("Problème dans la sélection d'article");
         }
         return art;
     }
 
-    public void update(Article article) throws Exception {
+    public void update(Article article) throws ArticleDalException {
         try (Connection cnx = JdbcTools.getConnection()) {
             PreparedStatement stmt = cnx.prepareStatement(UPDATE);
             stmt.setString(1, article.getReference());
@@ -159,17 +159,17 @@ public class ArticleDaoJdbcImpl {
 
         } catch (Exception e) {
             e.printStackTrace();
-            throw new Exception("Problème dans la modification");
+            throw new ArticleDalException("Problème dans la modification");
         }
     }
 
-    public void delete(int idArticle) throws Exception {
+    public void delete(int idArticle) throws ArticleDalException {
         try (Connection cnx = JdbcTools.getConnection()) {
             PreparedStatement stmt = cnx.prepareStatement(DELETE);
             stmt.setInt(1, idArticle);
             stmt.executeUpdate();
         } catch (Exception e) {
-            throw new Exception("Problème lors de la suppression");
+            throw new ArticleDalException("Problème lors de la suppression");
         }
     }
 
