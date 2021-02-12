@@ -1,11 +1,11 @@
 package papeterie.part3.src.fr.eni.papeterie.dal;
 
-import papeterie.part2.src.fr.eni.papeterie.bo.Article;
-import papeterie.part2.src.fr.eni.papeterie.bo.Ramette;
-import papeterie.part2.src.fr.eni.papeterie.bo.Stylo;
-import papeterie.part2.src.fr.eni.papeterie.dal.jdbc.ArticleDalException;
-import papeterie.part2.src.fr.eni.papeterie.dal.jdbc.ArticleDaoFact;
-import papeterie.part2.src.fr.eni.papeterie.dal.jdbc.ArticleDaoJdbc;
+import papeterie.part3.src.fr.eni.papeterie.bo.Article;
+import papeterie.part3.src.fr.eni.papeterie.bo.Ramette;
+import papeterie.part3.src.fr.eni.papeterie.bo.Stylo;
+import papeterie.part3.src.fr.eni.papeterie.dal.jdbc.DalException;
+import papeterie.part3.src.fr.eni.papeterie.dal.jdbc.ArticleDao;
+import papeterie.part3.src.fr.eni.papeterie.dal.jdbc.DaoFact;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ public class AppliTestDAL2 {
 	public static void main(String[] args) {
 
 		//Déclaration et instanciation de la DAO
-		ArticleDaoJdbc articleDAO = ArticleDaoFact.getArticleDAO();
+		ArticleDao articleDAO = DaoFact.getArticleDAO();
 
 		//Instanciation du jeu d'essai 
 		Article a1 = new Stylo( "Bic", "BBOrange","Bic bille Orange", 1.2f, 20, "bleu");
@@ -71,7 +71,7 @@ public class AppliTestDAL2 {
 			System.out.println("---------------------------------------------------------------");
 
 			
-		} catch (ArticleDalException e) {
+		} catch (DalException e) {
 			e.printStackTrace();
 		}
 

@@ -1,10 +1,10 @@
 package papeterie.part3.src.fr.eni.papeterie.dal;
 
-import papeterie.part2.src.fr.eni.papeterie.bo.Article;
-import papeterie.part2.src.fr.eni.papeterie.bo.Ramette;
-import papeterie.part2.src.fr.eni.papeterie.bo.Stylo;
-import papeterie.part2.src.fr.eni.papeterie.dal.jdbc.ArticleDalException;
-import papeterie.part2.src.fr.eni.papeterie.dal.jdbc.ArticleDaoJdbcImpl;
+import papeterie.part3.src.fr.eni.papeterie.bo.Article;
+import papeterie.part3.src.fr.eni.papeterie.bo.Ramette;
+import papeterie.part3.src.fr.eni.papeterie.bo.Stylo;
+import papeterie.part3.src.fr.eni.papeterie.dal.jdbc.DalException;
+import papeterie.part3.src.fr.eni.papeterie.dal.jdbc.ArticleDaoImpl;
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ public class AppliTestDAL {
 	public static void main(String[] args) {
 
 		//Déclaration et instanciation de la DAO
-		ArticleDaoJdbcImpl articleDAO = new ArticleDaoJdbcImpl();
+		ArticleDaoImpl articleDAO = new ArticleDaoImpl();
 
 		//Instanciation du jeu d'essai
 		Article a1 = new Stylo( "Bic", "BBOrange","Bic bille Orange", 1.2f, 20, "bleu");
@@ -60,7 +60,7 @@ public class AppliTestDAL {
 			System.out.println("---------------------------------------------------------------");
 
 
-		} catch (ArticleDalException e) {
+		} catch (DalException e) {
 			e.printStackTrace();
 		}
 

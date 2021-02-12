@@ -4,10 +4,15 @@ public class Ligne
 {
 	//Attributs
 	protected int qte;
+	protected Integer id;
 	protected Article article;
 	
 	//Constructeurs
-	Ligne(Article article, int qte) 
+	public Ligne(){
+
+	}
+
+	Ligne(Article article, int qte)
 	{
 			setArticle(article);
 			setQte(qte);
@@ -41,8 +46,15 @@ public class Ligne
 	{
 		return article.getPrixUnitaire();
 	}
-	
-	
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
 	//Méthodes
 	public String toString()
 	{

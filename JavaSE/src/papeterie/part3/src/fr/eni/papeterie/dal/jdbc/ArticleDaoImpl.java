@@ -1,8 +1,8 @@
 package papeterie.part3.src.fr.eni.papeterie.dal.jdbc;
 
-import papeterie.part2.src.fr.eni.papeterie.bo.Article;
-import papeterie.part2.src.fr.eni.papeterie.bo.Ramette;
-import papeterie.part2.src.fr.eni.papeterie.bo.Stylo;
+import papeterie.part3.src.fr.eni.papeterie.bo.Article;
+import papeterie.part3.src.fr.eni.papeterie.bo.Ramette;
+import papeterie.part3.src.fr.eni.papeterie.bo.Stylo;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,7 +11,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArticleDaoJdbcImpl implements ArticleDaoJdbc {
+public class ArticleDaoImpl implements ArticleDao {
 
     private String INSERT = "INSERT INTO articles (reference,marque,designation,prixUnitaire,qteStock,grammage,couleur,type) VALUES (?,?,?,?,?,?,?,?)";
     private String SELECT = "SELECT * FROM articles";
@@ -22,7 +22,7 @@ public class ArticleDaoJdbcImpl implements ArticleDaoJdbc {
     private String DELETE = "DELETE FROM articles WHERE idArticle=?";
 
 
-    public void insert(Article article) throws ArticleDalException {
+    public void insert(Article article) throws DalException {
         try (Connection cnx = JdbcTools.getConnection()) {
             PreparedStatement stmt = cnx.prepareStatement(INSERT, Statement.RETURN_GENERATED_KEYS);
             stmt.setString(1, article.getReference());
@@ -53,11 +53,11 @@ public class ArticleDaoJdbcImpl implements ArticleDaoJdbc {
 
         } catch (Exception e) {
             e.printStackTrace();
-            throw new ArticleDalException("problème dans l'insertion d'un article");
+            throw new DalException("problème dans l'insertion d'un article");
         }
     }
 
-    public List<Article> selectAll() throws ArticleDalException {
+    public List<Article> selectAll() throws DalException {
         List<Article> result = new ArrayList<Article>();
         try (Connection cnx = JdbcTools.getConnection()) {
             PreparedStatement stmt = cnx.prepareStatement(SELECT);
@@ -83,12 +83,12 @@ public class ArticleDaoJdbcImpl implements ArticleDaoJdbc {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            throw new ArticleDalException("problème dans la selection des Articles");
+            throw new DalException("problème dans la selection des Articles");
         }
         return result;
     }
 
-    public Article selectById(int id) throws ArticleDalException {
+    public Article selectById(int id) throws DalException {
         Article art = new Ramette();
         try (Connection cnx = JdbcTools.getConnection()) {
             PreparedStatement stmt = cnx.prepareStatement(SelectWhere);
@@ -127,12 +127,12 @@ public class ArticleDaoJdbcImpl implements ArticleDaoJdbc {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            throw new ArticleDalException("Problème dans la sélection d'article");
+            throw new DalException("Problème dans la sélection d'article");
         }
         return art;
     }
 
-    public void update(Article article) throws ArticleDalException {
+    public void update(Article article) throws DalException {
         try (Connection cnx = JdbcTools.getConnection()) {
             PreparedStatement stmt = cnx.prepareStatement(UPDATE);
             stmt.setString(1, article.getReference());
@@ -157,17 +157,17 @@ public class ArticleDaoJdbcImpl implements ArticleDaoJdbc {
 
         } catch (Exception e) {
             e.printStackTrace();
-            throw new ArticleDalException("Problème dans la modification");
+            throw new DalException("Problème dans la modification");
         }
     }
 
-    public void delete(int idArticle) throws ArticleDalException {
+    public void delete(int idArticle) throws DalException {
         try (Connection cnx = JdbcTools.getConnection()) {
             PreparedStatement stmt = cnx.prepareStatement(DELETE);
             stmt.setInt(1, idArticle);
             stmt.executeUpdate();
         } catch (Exception e) {
-            throw new ArticleDalException("Problème lors de la suppression");
+            throw new DalException("Problème lors de la suppression");
         }
     }
 

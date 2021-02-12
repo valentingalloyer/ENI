@@ -12,6 +12,7 @@ public class Panier {
 
 	//Attributs d'instance
 	private List<Ligne> lignesPanier;
+	private Integer id;
 	private float montant;
 
 	//Constructeurs
@@ -100,6 +101,13 @@ public class Panier {
 		this.montant = montant;
 	}
 
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
 }
 
 
