@@ -1,0 +1,14 @@
+.center {
+    text-align: center;
+}
+
+.entoure {
+    border-width:1px;
+    border-style:solid;
+    border-color:black;
+    border-radius: 7px;
+}
+
+footer {
+    bottom: 0;
+}
