@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import bo.Biere;
-import bo.Brasserie;
 import dal.DALException;
 import dal.DAOFact;
 

@@ -1,19 +1,15 @@
 package dal;
 
-import bo.Biere;
-import bo.Brasserie;
+import bo.Aliment;
+import bo.Repas;
 
 public class DAOFact {
-	public static DAO<Brasserie> getBrasserieDAO() {
-		return new BrasserieDAOImpl();
+	public static DAO<Repas> getRepasDAO() {
+		return new RepasDAOImpl();
 	}
 	
 	
-	public static DAO<Biere> getBiereDAO() {
-		return new BiereDAOImpl();
-	}
-	
-	public static BlackList getBlackList() {
-		return new BlackList();
+	public static DAO<Aliment> getAlimentDAO() {
+		return new AlimentDAOImpl();
 	}
 }

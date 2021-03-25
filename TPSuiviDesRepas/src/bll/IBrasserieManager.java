@@ -3,7 +3,6 @@ package bll;
 import java.util.List;
 
 import bo.Biere;
-import bo.Brasserie;
 import dal.DALException;
 
 public interface IBrasserieManager {

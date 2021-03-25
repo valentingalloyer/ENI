@@ -3,7 +3,6 @@ package ihm;
 
 import bll.BrasserieManagerSingleton;
 import bll.IBrasserieManager;
-import bo.Brasserie;
 import dal.DALException;
 import dal.DAOFact;
 

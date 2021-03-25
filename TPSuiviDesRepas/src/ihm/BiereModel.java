@@ -3,7 +3,6 @@ package ihm;
 import java.util.Calendar;
 
 import bo.Biere;
-import bo.Brasserie;
 import dal.DALException;
 
 public class BiereModel {

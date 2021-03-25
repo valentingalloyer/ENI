@@ -9,13 +9,13 @@
     <file url="file://$PROJECT_DIR$/src/bo/Brasserie.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/bo/Repas.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/dal/.gitignore" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/dal/BiereDAOImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/dal/BlackList.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/dal/BrasserieDAOImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/dal/DALException.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/dal/DAO.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/dal/DAOFact.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/dal/JdbcTools.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/dal/RepasDAOImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/dal/Settings.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/dal/TestDAL.java" charset="UTF-8" />
     <file url="PROJECT" charset="windows-1252" />

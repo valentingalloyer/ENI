@@ -3,7 +3,6 @@ package dal;
 import java.util.Calendar;
 
 import bo.Biere;
-import bo.Brasserie;
 
 public class TestDAL {
 
